@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.conicsections.ConicSectionsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvConicSections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_conicsections"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/equationScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/tvConicSections"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:id="@+id/equationRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etA"
+                    style="@style/ConicInput"
+                    android:hint="@string/A"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    style="@style/ConicLabel"
+                    android:text="@string/xsquared" />
+
+                <TextView
+                    style="@style/PlusLabel"
+                    android:text="@string/Plus" />
+
+                <EditText
+                    android:id="@+id/etB"
+                    style="@style/ConicInput"
+                    android:hint="@string/B"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    style="@style/ConicLabel"
+                    android:text="@string/X" />
+
+                <TextView
+                    style="@style/PlusLabel"
+                    android:text="@string/Plus" />
+
+                <EditText
+                    android:id="@+id/etC"
+                    style="@style/ConicInput"
+                    android:hint="@string/C"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    style="@style/ConicLabel"
+                    android:text="@string/ysquared" />
+
+                <TextView
+                    style="@style/PlusLabel"
+                    android:text="@string/Plus" />
+
+                <EditText
+                    android:id="@+id/etD"
+                    style="@style/ConicInput"
+                    android:hint="@string/D"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    style="@style/ConicLabel"
+                    android:text="@string/Y" />
+
+                <TextView
+                    style="@style/PlusLabel"
+                    android:text="@string/Plus" />
+
+                <EditText
+                    android:id="@+id/etE"
+                    style="@style/ConicInput"
+                    android:hint="@string/E"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    style="@style/ConicLabel"
+                    android:text="@string/zero" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/buttonRow"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/equationScroll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/buttonCalculate"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Calculate" />
+
+            <Button
+                android:id="@+id/buttonExplain"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="16dp"
+                android:text="@string/Explain" />
+
+            <Button
+                android:id="@+id/buttonClear"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="16dp"
+                android:text="@string/Clear" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/Results"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/buttonRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvExplanation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/author" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author"
+            android:layout_marginBottom="8dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
