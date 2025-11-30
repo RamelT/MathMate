@@ -1,1 +1,1 @@
-# MathMate
+MathMate
